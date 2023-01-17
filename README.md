@@ -36,12 +36,17 @@ La función "setup_wifi()" se utiliza para conectarse a una red Wi-Fi.
 La función "devolución de llamada ()" se usa para manejar los mensajes entrantes del servidor MQTT.
 El resto del código parece usar estas bibliotecas, constantes, variables y funciones para conectarse a una red Wi-Fi, conectarse a un servidor MQTT, leer datos de sensores y controlar dispositivos como LED y relés en función de los datos recibidos.
 
+* Verifica si el código no tiene errores de sintaxis y copilaria de forma correcta cuando cargue en el dispositivo.
 ![Verificar código ](https://github.com/Zasalast/Esp32-D1-Criadora-de-Pollos/blob/main/esp32/verificar_codigo.jpg)
+
+* Carga el código al dispositivo, en este caso al "ESP32 D1" para luego poder funcionar de acuerdo al codigo de instrucciones proporcionado.
 ![Cargar Código ](https://github.com/Zasalast/Esp32-D1-Criadora-de-Pollos/blob/main/esp32/cargar_codigo.jpg)
 
+* El gestor de bibliotecas permite instalar las mismas para que los dispositivos puedan ejecutarce de acuerdo a los dispositivos especificos que tienen, como modulos y componentes adicionales, como es el caso de la libreria "DHT.h" que permite entender los datos que envia el sensor y lo convierte a datos.
 ![Gestionar Bibliotecas](https://github.com/Zasalast/Esp32-D1-Criadora-de-Pollos/blob/main/esp32/gestionar_bibliotecas.jpg)
-* Si da Click en "Historial de Datos" puede visualizar los datos como puede ver acontunuación
 
+* El busca la libreria en la bibliotecas para instalar las mismas, para que los dispositivos puedan ejecutarce de acuerdo a los dispositivos especificos que tienen o como "ESPDateTime.h" la libreria utilizada para obtener la fecha y  hora.
 ![Buscar Libreria](https://github.com/Zasalast/Esp32-D1-Criadora-de-Pollos/blob/main/esp32/buscar_librerias.jpg)
 
-[Instalar Libreria](https://github.com/Zasalast/Esp32-D1-Criadora-de-Pollos/blob/main/esp32/instalar_librerias.jpg)
+* Instala la libreria, como se menciono anterior mente, las librerias permiten realizar funciones especificas en el desarrollo.
+![Instalar Libreria](https://github.com/Zasalast/Esp32-D1-Criadora-de-Pollos/blob/main/esp32/instalar_librerias.jpg)
