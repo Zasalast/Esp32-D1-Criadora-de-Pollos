@@ -4,7 +4,7 @@
 #include <Wire.h> //libreria para enviar datos desde el monitor
 #include <PubSubClient.h> //libreria para publicar y suscribirnos a un tema y recibir o enviar mensajes mqtt
 #include <DHT.h> // libreria que permite configurar y obtener datos de sensores 
-#include <ESPDateTime.h> // libreria utilizada para obtener la hora y fehca 
+#include <ESPDateTime.h> // libreria utilizada para obtener la fecha y hora. 
 
 
 //configuracion de servidor, hora de verano para obtener hora y fecha
