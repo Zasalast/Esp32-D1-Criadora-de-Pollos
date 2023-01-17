@@ -43,6 +43,7 @@ El resto del código parece usar estas bibliotecas, constantes, variables y func
 ![Cargar Código ](https://github.com/Zasalast/Esp32-D1-Criadora-de-Pollos/blob/main/esp32/cargar_codigo.jpg)
 
 * El gestor de bibliotecas permite instalar las mismas para que los dispositivos puedan ejecutarce de acuerdo a los dispositivos especificos que tienen, como modulos y componentes adicionales, como es el caso de la libreria "DHT.h" que permite entender los datos que envia el sensor y lo convierte a datos.
+
 ![Gestionar Bibliotecas](https://github.com/Zasalast/Esp32-D1-Criadora-de-Pollos/blob/main/esp32/gestionar_bibliotecas.jpg)
 
 * El busca la libreria en la bibliotecas para instalar las mismas, para que los dispositivos puedan ejecutarce de acuerdo a los dispositivos especificos que tienen o como "ESPDateTime.h" la libreria utilizada para obtener la fecha y  hora.
