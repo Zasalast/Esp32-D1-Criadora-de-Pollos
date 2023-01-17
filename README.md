@@ -35,3 +35,13 @@ La función "NTPConnect()" se utiliza para conectarse a un servidor NTP y config
 La función "setup_wifi()" se utiliza para conectarse a una red Wi-Fi.
 La función "devolución de llamada ()" se usa para manejar los mensajes entrantes del servidor MQTT.
 El resto del código parece usar estas bibliotecas, constantes, variables y funciones para conectarse a una red Wi-Fi, conectarse a un servidor MQTT, leer datos de sensores y controlar dispositivos como LED y relés en función de los datos recibidos.
+
+![Verificar código ](https://github.com/Zasalast/Esp32-D1-Criadora-de-Pollos/blob/main/esp32/verificar_codigo.jpg)
+![Cargar Código ](https://github.com/Zasalast/Esp32-D1-Criadora-de-Pollos/blob/main/esp32/cargar_codigo.jpg)
+
+![Gestionar Bibliotecas](https://github.com/Zasalast/Esp32-D1-Criadora-de-Pollos/blob/main/esp32/gestionar_bibliotecas.jpg)
+* Si da Click en "Historial de Datos" puede visualizar los datos como puede ver acontunuación
+
+![Buscar Libreria](https://github.com/Zasalast/Esp32-D1-Criadora-de-Pollos/blob/main/esp32/buscar_librerias.jpg)
+
+[Instalar Libreria](https://github.com/Zasalast/Esp32-D1-Criadora-de-Pollos/blob/main/esp32/instalar_librerias.jpg)
