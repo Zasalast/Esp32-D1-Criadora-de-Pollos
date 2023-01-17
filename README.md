@@ -46,7 +46,9 @@ El resto del código parece usar estas bibliotecas, constantes, variables y func
 ![Gestionar Bibliotecas](https://github.com/Zasalast/Esp32-D1-Criadora-de-Pollos/blob/main/esp32/gestionar_bibliotecas.jpg)
 
 * El busca la libreria en la bibliotecas para instalar las mismas, para que los dispositivos puedan ejecutarce de acuerdo a los dispositivos especificos que tienen o como "ESPDateTime.h" la libreria utilizada para obtener la fecha y  hora.
+
 ![Buscar Libreria](https://github.com/Zasalast/Esp32-D1-Criadora-de-Pollos/blob/main/esp32/buscar_librerias.jpg)
 
 * Instala la libreria, como se menciono anterior mente, las librerias permiten realizar funciones especificas en el desarrollo.
+
 ![Instalar Libreria](https://github.com/Zasalast/Esp32-D1-Criadora-de-Pollos/blob/main/esp32/instalar_librerias.jpg)
