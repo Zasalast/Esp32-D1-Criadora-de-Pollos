@@ -64,3 +64,75 @@ El resto del código parece usar estas bibliotecas, constantes, variables y func
 #include <DHT.h> // libreria que permite configurar y obtener datos de sensores 
 #include <ESPDateTime.h> // libreria utilizada para obtener la fecha y hora. 
 ```
+
+
+## Software ArduinoIDE
+En este software importaron diferentes librerías para el funcionamiento de los dispositivos a utilizar imagen(4) y se configuraron los sensores dth11 para obtener la información de la temperatura y la humedad, se configuraron las siguientes condiciones: 
+•	cuando la temperatura de la criadora sea menor a 30° (temperatura baja) se encienda la fuente de calor, se apaguen los ventiladores, el bafle emita un sonido de alarma y el led rgb genere una luz de color azul.
+•	Cuando la temperatura de la criadora este entre 30° y 33° (rango normal) la fuente de calor permanezca encendida, se apaguen los ventiladores y el led rgb genere una luz de color verde.
+•	Cuando la temperatura de la criadora sea superior a 33° (temperatura alta) la fuente de calor se apague, se enciendan los ventiladores, el bafle emita un sonido de alarma y el led rgb genere una luz de color Roja.
+Las condiciones mencionadas anteriormente generan alertas que permiten informarle al usuario en qué condiciones se encuentra la criadora. Se configura la placa de desarrollo esp32 asignándole unas credenciales de red wifi y del servidor MQTT para que cuando este en funcionamiento la placa de desarollo se conecte a internet y pueda enviar un mensaje en formato Json a la plataforma IOTcore de aws. 
+```
+//librerías
+#include "SPIFFS.h" //leer los archivos que contienen las credenciales para poder enviar datos a iot core
+#include <WiFiClientSecure.h> //libreria que permite conectar esp32 a una red wifi
+#include <Wire.h> //libreria para enviar datos desde el monitor
+#include <PubSubClient.h> //libreria para publicar y suscribirnos a un tema y recibir o enviar mensajes mqtt
+#include <DHT.h> // libreria que permite configurar y obtener datos de sensores 
+#include <ESPDateTime.h> // libreria utilizada para obtener la fecha y hora. 
+
+
+//configuracion de servidor, hora de verano para obtener hora y fecha
+const char* ntpServer = "pool.ntp.org";
+const long  gmtOffset_sec = -18000;
+const int   daylightOffset_sec = 0;
+
+
+//nombre y contraseña de red Wifi
+const char* red = "DESKTOP-9F81IOV 0670";
+const char* password = "6D562<r8";
+
+//configuraciones para conectar al servidor MQTT
+const char* mqtt_server = "a2slv14r79tw7t-ats.iot.us-east-1.amazonaws.com";
+const int mqtt_port = 8883;
+// definicion de variables
+String Read_rootca;
+String Read_cert;
+String Read_privatekey;
+String asd;
+// pines led rgb
+int pinR = 18;
+int pinG = 19;
+//pin bafle
+int audio = 26;
+int canal=0, frec=250, resolucion=8;
+#define BUFFER_LEN  256
+long lastMsg = 0;
+char msg[BUFFER_LEN];
+int value = 0;
+byte mac[6];
+char mac_Id[18];
+int count = 1;
+//Configuración de cliente MQTT
+WiFiClientSecure espClient;
+PubSubClient client(espClient);
+```
+
+## Protocolo MQTT
+Con el protocolo MQTT se envia un mensaje por internet de la placa esp32 a a la plataforma IOTcore, este mensaje tiene un formato Json y contiene: la dirección mac, la temperatura y humedad de la criadora y del medio ambiente externo y la fecha y hora en que se realizó la lectura de dichos valores. En la imagen(5) se visualiza la cadena de texto en la que se especifican las variables que se envían a través del protocolo.
+
+```
+ // cadena de texto en formato que se envia a iotcore
+    snprintf (msg, BUFFER_LEN, "{\"mac_Id\" : \"%s\", \"Temperatura1\" : %s, \"Humedad1\" : %s, \"Temperatura2\" : %s, \"Humedad2\" : %s, \"Fecha_hora\" : \"%s\"}",
+    macIdStr.c_str(), Temperatura1.c_str(), Humedad1.c_str(), Temperatura2.c_str(), Humedad2.c_str(), fecha.c_str());
+    Serial.print("Publicando mensaje: ");
+    Serial.print(count);
+    Serial.println(msg);
+    client.publish("sensor", msg);
+    count = count + 1;
+  }
+  digitalWrite(2, HIGH);
+  delay(1000);
+  digitalWrite(2, LOW);
+  delay(1000);
+ ```
