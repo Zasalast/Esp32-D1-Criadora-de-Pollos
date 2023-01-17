@@ -53,3 +53,14 @@ El resto del código parece usar estas bibliotecas, constantes, variables y func
 * Instala la libreria, como se menciono anterior mente, las librerias permiten realizar funciones especificas en el desarrollo.
 
 ![Instalar Libreria](https://github.com/Zasalast/Esp32-D1-Criadora-de-Pollos/blob/main/esp32/instalar_librerias.jpg)
+
+### Librerias a instalar:
+```
+//librerías
+#include "SPIFFS.h" //leer los archivos que contienen las credenciales para poder enviar datos a iot core
+#include <WiFiClientSecure.h> //libreria que permite conectar esp32 a una red wifi
+#include <Wire.h> //libreria para enviar datos desde el monitor
+#include <PubSubClient.h> //libreria para publicar y suscribirnos a un tema y recibir o enviar mensajes mqtt
+#include <DHT.h> // libreria que permite configurar y obtener datos de sensores 
+#include <ESPDateTime.h> // libreria utilizada para obtener la fecha y hora. 
+```
