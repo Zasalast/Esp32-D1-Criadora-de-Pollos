@@ -136,3 +136,7 @@ Con el protocolo MQTT se envia un mensaje por internet de la placa esp32 a a la 
   digitalWrite(2, LOW);
   delay(1000);
  ```
+##	Modelo electrónico del sistema
+En el modelo electrónico (ilustración 3) se puede observar las conexiones realizadas para darle solución al proyecto.
+
+![Buscar Libreria](https://github.com/Zasalast/Esp32-D1-Criadora-de-Pollos/blob/main/esp32/modelo-electronico.jpg)
