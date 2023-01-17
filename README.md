@@ -68,9 +68,9 @@ El resto del código parece usar estas bibliotecas, constantes, variables y func
 
 ## Software ArduinoIDE
 En este software importaron diferentes librerías para el funcionamiento de los dispositivos a utilizar imagen(4) y se configuraron los sensores dth11 para obtener la información de la temperatura y la humedad, se configuraron las siguientes condiciones: 
-•	cuando la temperatura de la criadora sea menor a 30° (temperatura baja) se encienda la fuente de calor, se apaguen los ventiladores, el bafle emita un sonido de alarma y el led rgb genere una luz de color azul.
-•	Cuando la temperatura de la criadora este entre 30° y 33° (rango normal) la fuente de calor permanezca encendida, se apaguen los ventiladores y el led rgb genere una luz de color verde.
-•	Cuando la temperatura de la criadora sea superior a 33° (temperatura alta) la fuente de calor se apague, se enciendan los ventiladores, el bafle emita un sonido de alarma y el led rgb genere una luz de color Roja.
+* cuando la temperatura de la criadora sea menor a 30° (temperatura baja) se encienda la fuente de calor, se apaguen los ventiladores, el bafle emita un sonido de alarma y el led rgb genere una luz de color azul.
+*	Cuando la temperatura de la criadora este entre 30° y 33° (rango normal) la fuente de calor permanezca encendida, se apaguen los ventiladores y el led rgb genere una luz de color verde.
+* Cuando la temperatura de la criadora sea superior a 33° (temperatura alta) la fuente de calor se apague, se enciendan los ventiladores, el bafle emita un sonido de alarma y el led rgb genere una luz de color Roja.
 Las condiciones mencionadas anteriormente generan alertas que permiten informarle al usuario en qué condiciones se encuentra la criadora. Se configura la placa de desarrollo esp32 asignándole unas credenciales de red wifi y del servidor MQTT para que cuando este en funcionamiento la placa de desarollo se conecte a internet y pueda enviar un mensaje en formato Json a la plataforma IOTcore de aws. 
 ```
 //librerías
