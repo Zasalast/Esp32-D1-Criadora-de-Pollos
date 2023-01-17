@@ -146,7 +146,7 @@ void setup() {
   setup_wifi();
   delay(1000);
 
-  //leer crdenciales de archivos para conectar con el objeto creado en iotcore
+  //leer credenciales de archivos para conectar con el objeto creado en iotcore
   if (!SPIFFS.begin(true)) {
     Serial.println("Se ha producido un error al montar SPIFFS");
     return;
